@@ -6,24 +6,15 @@
 
 <body>
     <h1>ICE's BLOG</h1>
-    <h2>What am I doing ?</h2>
+    {% for post in posts %}
+    <h2>{{post.title}}</h2>
     <div>
-        <p>published: 14.06.2014, 12:14</p>
+        <p>author: {{post.author.username}}</p>
+        <p>published: {{post.published_date}}</p>
         <br>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida
-            at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
-            sit amet risus.</p>
+        <p>{{post.text|linebreaksbr}}</p>
     </div>
-
-    <h2>Holayyyyyyy</h2>
-    <div>
-        <p>published: 14.06.2014, 12:14</p>
-        <br>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, mollitia voluptatibus. Minus ducimus dolorum,
-            incidunt inventore tempore distinctio aut ipsum possimus blanditiis similique cupiditate hic animi! Suscipit
-            modi aliquam eos.</p>
-
-    </div>
+    {% endfor %}
 </body>
 
 </html>
